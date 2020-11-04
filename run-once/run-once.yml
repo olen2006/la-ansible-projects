@@ -1,0 +1,13 @@
+--- # Run Once Example
+- hosts: centos 
+  tasks:
+    - name: Run sleep.sh
+      command: /home/ansible/github/la-ansible-projects/run-once/sleep.sh
+      async: 30 # ansible executes command above for 60 sec's if it's not finished by that time then it will kill it and FAIL.
+      poll: 0 
+      run_once: yes
+    - name: Install mariadb
+      package:
+        name: mariadb-server
+        state: latest
+      become: yes
