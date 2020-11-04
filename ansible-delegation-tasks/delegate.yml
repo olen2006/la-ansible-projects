@@ -1,0 +1,13 @@
+--- #Delegation example
+- hosts: centos
+  tasks:
+    - name: Run sleep.sh
+      command: /home/ansible/github/la-ansible-projects/ansible-delegation-tasks/sleep.sh
+      async: 60
+      poll: 0
+      delegate_to: slave1 #command will run on slave1 only
+    - name: Install mariadb #will run for the hosts centos
+      package:
+        name: mariadb
+        state: latest
+      become: yes
