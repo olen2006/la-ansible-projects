@@ -1,0 +1,7 @@
+--- # Async Task Example
+- hosts: localhost
+  tasks:
+    - name: Run sleep.sh
+      command: /home/ansible/github/la-ansible-projects/asyncronous-tasks/sleep.sh
+      async: 30 # ansible executes command above for 60 sec's if it's not finished by that time then it will kill it and FAIL.
+      poll: 10  # how often ansible checks on the job | 10 sec by default | if set to 0, ansible won't come back to check on service. Just start it and exit. 
