@@ -1,2 +1,3 @@
-This Playbook does the following
---------------------------------
+## This Playbook does the following
+
+<img src="images/Image.png" with="50%">
