@@ -5,4 +5,5 @@
 - Specify which tags to run or not to run via arguments to the ansible-playbook
 
 `ansible-playbook tags.yml -t software,files`
+
 `ansible-playbook tags.yml --skip-tags software`
