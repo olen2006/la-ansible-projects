@@ -2,4 +2,4 @@
 
 <!-- img src="images/Image.png" with="50%" -->
 
-![nfs image](images/Image.png | width=70%)
+![nfs image](images/Image.png | width=400px)
