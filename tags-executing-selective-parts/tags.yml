@@ -1,0 +1,25 @@
+--- #Tags example
+- hosts: localhost
+  tasks:
+    - name: install elinks
+      become: yes # escalate rights only for this task
+      yum:
+        name: elinks
+        state: latest
+      tags:
+        - software
+    - name: Add line to text file 
+      lineinfile:
+        path: /home/ansible/github/la-ansible-projects/tags-executing-selective-parts/tag-test.txt
+        create: yes
+        line: "Tag called!"
+      tags:
+        - files
+        - config
+    - name: Copy tag file 
+      copy:
+        src: /home/ansible/github/la-ansible-projects/tags-executing-selective-parts/tag-test.txt
+        dest: /tmp/copied.txt
+      tags:
+        - config
+
