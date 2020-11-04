@@ -17,4 +17,4 @@
   ```
   > Note: variables **{{ nfs_ip }}** and **{{ nfs_hostname }}** are populated using magic variables in playbook.
 - Create users from file stored on control at **/user-list.txt** only if the remote host has the file **/opt/user-agreement.txt**.
-  > ansible-playbook nfs.yml
+```ansible-playbook nfs.yml```
