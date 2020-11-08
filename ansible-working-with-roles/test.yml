@@ -1,0 +1,12 @@
+--- # calling a role for execution of a playbook
+- hosts: localhost
+  become: yes
+  # roles:                    # /etc/ansible/roles is default location where it will look for roles
+  #   - /home/ansible/common  #if we specify role name only without a path
+  tasks:
+    - name: I ran 
+      debug:
+        msg: "I ran!"
+    - name: use role
+      include_role:
+          name: /home/ansible/common
